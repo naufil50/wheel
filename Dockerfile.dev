@@ -2,9 +2,6 @@ FROM ruby:2.7.2-alpine3.13
 
 ENV APP_PATH /var/app
 ENV BUNDLE_VERSION 2.1.4
-ENV BUNDLE_PATH /usr/local/bundle/gems
-ENV TEMP_PATH /tmp
-ENV RAILS_LOG_TO_STDOUT true
 ENV RAILS_PORT 3000
 
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
@@ -27,12 +24,9 @@ tzdata \
 && mkdir -p $APP_PATH 
 
 
-RUN gem install bundler --version "$BUNDLE_VERSION" \
-&& rm -rf $GEM_HOME/cache/*
+RUN gem install bundler --version "$BUNDLE_VERSION"
 
 # navigate to app directory
 WORKDIR $APP_PATH
 
 EXPOSE $RAILS_PORT
-
-ENTRYPOINT [ "bundle", "exec" ]

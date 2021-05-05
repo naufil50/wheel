@@ -18,14 +18,15 @@ services:
     networks:
       - development
     ports:
-      - "5499:5432"
+      - 5432
   app:
     build:
       context: .
       dockerfile: Dockerfile.dev
     container_name: wheel_app
+    image: wheel-dev:1.0.0
     volumes:
-      - .:/var/app
+      - .:/var/app:cached
       - shared_data:/var/shared
       - gem_cache:/usr/local/bundle/gems
     networks:
