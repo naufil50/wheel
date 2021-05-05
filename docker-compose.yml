@@ -6,19 +6,20 @@ volumes:
   gem_cache:
   shared_data:
 services:
-  wheel_db:
+  db:
     image: postgres:12.5-alpine
     container_name: wheel_db
     volumes:
       - db_data:/var/lib/postgresql/data
       - shared_data:/var/shared
     environment:
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
     networks:
       - development
     ports:
       - "5499:5432"
-  wheel_app:
+  app:
     build:
       context: .
       dockerfile: Dockerfile.dev
@@ -38,4 +39,4 @@ services:
     environment:
       RAILS_ENV: development
     depends_on:
-      - wheel_db
+      - db
