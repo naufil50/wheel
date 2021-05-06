@@ -23,12 +23,9 @@ Visit http://localhost:3000 and login with email `oliver@example.com` and passwo
 ## Docker for development environment
 
 1. Clone this repo by running `git clone https://github.com/bigbinary/wheel.git`
-2. `cd wheel` and then create your `config/database.yml` file.
-   Change the **host**, **username** and **password** to match it with the one set in `docker-compose.yml` file.
-   By default the _host_ is `db`(name of the service running the postgres container), _username_ is `postgres` and _password_ is `password`.
-3. When running wheel for the first time, run `docker-compose up --build` command. This will install all the dependencies and bring up the application.
-4. Though the application would be up by now, we haven't created and seeded the database. Run `docker-compose run app rails setup` to create the database and seed it.
-5. From now onwards, we can just run `docker-compose up` from within the root of the `wheel` directory to bring up the application in a container.
+2. `cd wheel` and then run `docker-compose up`.
+   Though the application would come up, we haven't created and seeded the database. Do `ctrl+c` and then run `docker-compose run app rails setup` to create and seed the database.
+3. From now onwards, we can just run `docker-compose up` from within the root of the `wheel` directory to bring up the application in a container.
 
 ## Replace Wheel with your project name
 

@@ -29,4 +29,14 @@ RUN gem install bundler --version "$BUNDLE_VERSION"
 # navigate to app directory
 WORKDIR $APP_PATH
 
+COPY Gemfile Gemfile.lock ./
+COPY package.json yarn.lock ./
+
+RUN bundle check || bundle install
+RUN yarn install --check-files
+
+COPY . .
+
+COPY ./config/database.yml.postgresql ./config/database.yml
+
 EXPOSE $RAILS_PORT

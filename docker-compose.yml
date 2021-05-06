@@ -39,5 +39,8 @@ services:
     command: ['rails', 'server', '-p', '3000', '-b', '0.0.0.0']
     environment:
       RAILS_ENV: development
+      PG_USER: postgres
+      PG_PASSWORD: password
+      PG_HOST: db
     depends_on:
       - db
