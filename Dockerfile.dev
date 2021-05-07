@@ -32,11 +32,9 @@ WORKDIR $APP_PATH
 COPY Gemfile Gemfile.lock ./
 COPY package.json yarn.lock ./
 
-RUN bundle check || bundle install
+RUN bundle check || bundle install --jobs=8
 RUN yarn install --check-files
 
 COPY . .
-
-COPY ./config/database.yml.postgresql ./config/database.yml
 
 EXPOSE $RAILS_PORT
