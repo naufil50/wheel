@@ -5,6 +5,7 @@ volumes:
   db_data:
   gem_cache:
   shared_data:
+  node_modules:
 services:
   db:
     image: postgres:12.5-alpine
@@ -29,6 +30,7 @@ services:
       - .:/var/app:cached
       - shared_data:/var/shared
       - gem_cache:/usr/local/bundle/gems
+      - node_modules:/var/app/node_modules
     networks:
       - development
     ports:
