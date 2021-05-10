@@ -6,6 +6,7 @@ volumes:
   gem_cache:
   shared_data:
   node_modules:
+  redis_data:
 services:
   db:
     image: postgres:12.5-alpine
@@ -20,6 +21,30 @@ services:
       - development
     ports:
       - 5432
+  redis:
+    image: redis:6.2.3-alpine
+    ports:
+      - 6379
+    volumes:
+      - redis_data:/var/lib/redis/data
+  sidekiq:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: wheel_sidekiq
+    depends_on:
+      - app
+      - db
+      - redis
+    volumes:
+      - .:/var/app
+      - shared_data:/var/shared
+      - gem_cache:/usr/local/bundle/gems
+      - node_modules:/var/app/node_modules
+    environment:
+      RAILS_ENV: development
+    entrypoint: docker-entrypoint.sh
+    command: ['sidekiq']
   app:
     build:
       context: .
@@ -46,3 +71,4 @@ services:
       PG_HOST: db
     depends_on:
       - db
+      - redis
