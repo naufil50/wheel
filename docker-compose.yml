@@ -36,7 +36,7 @@ services:
     networks:
       - development
     depends_on:
-      - app
+      - web
       - db
       - redis
     volumes:
