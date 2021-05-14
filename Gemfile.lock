@@ -120,8 +120,6 @@ GEM
       factory_bot (~> 6.1.0)
       railties (>= 5.0.0)
     ffi (1.13.1)
-    font-awesome-sass (5.15.1)
-      sassc (>= 1.11)
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
@@ -346,7 +344,6 @@ DEPENDENCIES
   email_prefixer
   email_validator
   factory_bot_rails
-  font-awesome-sass
   honeybadger
   jbuilder (>= 2.7)
   letter_opener
