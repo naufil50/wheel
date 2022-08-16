@@ -4,7 +4,7 @@ import { Search, Settings, Plus } from "neetoicons";
 import { Typography } from "neetoui";
 import { MenuBar } from "neetoui/layouts";
 
-export default function ContactsMenuBar({ showMenu }) {
+const ContactsMenuBar = ({ showMenu }) => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
 
   return (
@@ -61,4 +61,6 @@ export default function ContactsMenuBar({ showMenu }) {
       </MenuBar>
     </div>
   );
-}
+};
+
+export default ContactsMenuBar;

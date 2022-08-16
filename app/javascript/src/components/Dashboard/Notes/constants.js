@@ -29,6 +29,7 @@ export const NOTES_TABLE_COLUMN_DATA = [
 
 export const NOTES = [
   {
+    id: 1,
     title: "How to claim the warranty?",
     description: `Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
     execution_status: "Getting Started",
@@ -37,6 +38,7 @@ export const NOTES = [
     created_by: "Oliver Smith",
   },
   {
+    id: 2,
     title: "How to claim the warranty?",
     description: `Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
     execution_status: "Getting Started",
@@ -45,6 +47,7 @@ export const NOTES = [
     created_by: "Oliver Smith",
   },
   {
+    id: 3,
     title: "How to claim the warranty?",
     description: `Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
     execution_status: "Getting Started",
@@ -53,6 +56,7 @@ export const NOTES = [
     created_by: "Oliver Smith",
   },
   {
+    id: 4,
     title: "How to claim the warranty?",
     description: `Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
     execution_status: "Getting Started",

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { Button } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
@@ -11,12 +11,6 @@ const Contacts = () => {
   const [showMenu, setShowMenu] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [showNewContactPane, setShowNewContactPane] = useState(false);
-
-  useEffect(() => {
-    fetchContacts();
-  }, []);
-
-  const fetchContacts = () => {};
 
   return (
     <div className="flex">

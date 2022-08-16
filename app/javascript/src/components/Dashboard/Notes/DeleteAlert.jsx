@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Alert, Toastr } from "neetoui";
 
-const DeleteAlert = onClose => {
+const DeleteAlert = () => {
   const [open, setOpen] = useState(true);
 
   const handleDelete = async () => {
@@ -16,7 +16,6 @@ const DeleteAlert = onClose => {
 
   const closeAlert = () => {
     setOpen(false);
-    onClose;
   };
 
   return (

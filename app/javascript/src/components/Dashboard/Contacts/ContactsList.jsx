@@ -2,19 +2,18 @@ import React from "react";
 
 import { Table } from "neetoui";
 
-import { CONTACTS_COLUMNS as columns } from "./constants";
-import { CONTACTS_ROWS as rows } from "./constants";
+import { CONTACTS_COLUMNS, CONTACTS_ROWS } from "./constants";
 
-export default function ContactsList() {
-  return (
-    <Table
-      columnData={columns}
-      currentPageNumber={1}
-      defaultPageSize={10}
-      handlePageChange={function noRefCheck() {}}
-      onRowClick={function noRefCheck() {}}
-      onRowSelect={function noRefCheck() {}}
-      rowData={rows}
-    />
-  );
-}
+const ContactsList = () => (
+  <Table
+    columnData={CONTACTS_COLUMNS}
+    currentPageNumber={1}
+    defaultPageSize={10}
+    handlePageChange={() => {}}
+    onRowClick={() => {}}
+    onRowSelect={() => {}}
+    rowData={CONTACTS_ROWS}
+  />
+);
+
+export default ContactsList;

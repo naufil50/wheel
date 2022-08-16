@@ -6,9 +6,8 @@ import { Input, Select } from "neetoui/formik";
 
 import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
 
-export default function NoteForm({ onClose, note, isEdit }) {
+const NoteForm = ({ onClose, note, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
-
   const handleSubmit = () => {
     try {
       Toastr.success("Note has been successfully created.");
@@ -78,4 +77,6 @@ export default function NoteForm({ onClose, note, isEdit }) {
       )}
     </Formik>
   );
-}
+};
+
+export default NoteForm;
