@@ -30,33 +30,33 @@ const ContactForm = ({ onClose, contact }) => {
           <Pane.Body className="space-y-6">
             <div className="flex w-full justify-between space-x-4">
               <Input
+                required
                 label="First Name"
                 name="first_name"
                 className="float-left flex"
                 placeholder="Add Title"
-                required
               />
               <Input
+                required
                 label="Last Name"
                 name="last_name"
                 className="float-right flex"
                 placeholder="Add Description"
-                required
               />
             </div>
             <Input
+              required
               label="Email"
               name="email"
               className="w-full flex-grow-0"
               placeholder="Add Email"
-              required
             />
             <Input
+              required
               label="Address"
               name="address"
               className="w-full flex-grow-0"
               placeholder="Add Address"
-              required
             />
           </Pane.Body>
           <Pane.Footer>
