@@ -94,6 +94,9 @@ export const CONTACTS_FORM_INITIAL_FORM_VALUES = {
 export const CONTACTS_FORM_VALIDATION_SCHEMA = yup.object().shape({
   first_name: yup.string().required("First name is required"),
   last_name: yup.string().required("Last name is required"),
-  email: yup.string().required("Email is required"),
+  email: yup
+    .string()
+    .email("Invalid email address")
+    .required("Email is Required"),
   address: yup.string().required("Address is required"),
 });

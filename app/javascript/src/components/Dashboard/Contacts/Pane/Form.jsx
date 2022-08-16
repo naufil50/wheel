@@ -6,9 +6,8 @@ import { Input } from "neetoui/formik";
 
 import { CONTACTS_FORM_VALIDATION_SCHEMA } from "../constants";
 
-export default function ContactForm({ onClose, contact }) {
+const ContactForm = ({ onClose, contact }) => {
   const [submitted, setSubmitted] = useState(false);
-
   const handleSubmit = () => {
     try {
       Toastr.success("Contact has been successfully created.");
@@ -82,4 +81,6 @@ export default function ContactForm({ onClose, contact }) {
       )}
     </Formik>
   );
-}
+};
+
+export default ContactForm;

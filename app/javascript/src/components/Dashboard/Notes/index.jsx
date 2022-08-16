@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
-import { NOTES as notes } from "./constants";
+import { NOTES } from "./constants";
 import DeleteAlert from "./DeleteAlert";
 import NotesList from "./NotesList";
 import NotesMenuBar from "./NotesMenuBar";
@@ -36,11 +36,10 @@ const Notes = () => {
             onChange: e => setSearchTerm(e.target.value),
           }}
         />
-        <NotesList notes={notes} onDelete={() => setShowDeleteAlert(true)} />
+        <NotesList notes={NOTES} onDelete={() => setShowDeleteAlert(true)} />
         <NewNotePane
           showPane={showNewNotePane}
           setShowPane={setShowNewNotePane}
-          fetchNotes={notes}
         />
         {showDeleteAlert && (
           <DeleteAlert onClose={() => setShowDeleteAlert(false)} />

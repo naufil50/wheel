@@ -6,9 +6,8 @@ import Form from "./Form";
 
 import { CONTACTS_FORM_INITIAL_FORM_VALUES } from "../constants";
 
-export default function NewContactPane({ showPane, setShowPane }) {
+const NewContactPane = ({ showPane, setShowPane }) => {
   const onClose = () => setShowPane(false);
-
   return (
     <Pane isOpen={showPane} onClose={onClose}>
       <Pane.Header>
@@ -19,4 +18,6 @@ export default function NewContactPane({ showPane, setShowPane }) {
       <Form onClose={onClose} contact={CONTACTS_FORM_INITIAL_FORM_VALUES} />
     </Pane>
   );
-}
+};
+
+export default NewContactPane;

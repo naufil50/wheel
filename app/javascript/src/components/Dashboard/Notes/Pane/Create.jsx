@@ -6,7 +6,7 @@ import Form from "./Form";
 
 import { NOTES_FORM_INITIAL_FORM_VALUES } from "../constants";
 
-export default function NewNotePane({ showPane, setShowPane }) {
+const NewNotePane = ({ showPane, setShowPane }) => {
   const onClose = () => setShowPane(false);
 
   return (
@@ -23,4 +23,6 @@ export default function NewNotePane({ showPane, setShowPane }) {
       />
     </Pane>
   );
-}
+};
+
+export default NewNotePane;
