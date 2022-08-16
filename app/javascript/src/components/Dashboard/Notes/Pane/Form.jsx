@@ -29,18 +29,18 @@ const NoteForm = ({ onClose, note, isEdit }) => {
         <Form className="w-full">
           <Pane.Body className="space-y-6">
             <Input
+              required
               label="Title"
               name="title"
               className="w-full flex-grow-0"
               placeholder="Add Title"
-              required
             />
             <Input
+              required
               label="Description"
               name="description"
               className="w-full flex-grow-0"
               placeholder="Add Description"
-              required
             />
             <Select
               label="Assigned Contact"
